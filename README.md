@@ -1,4 +1,5 @@
 java-utils
 ==========
 
-[Java] Utility classes
+Utility classes for Java.
+
