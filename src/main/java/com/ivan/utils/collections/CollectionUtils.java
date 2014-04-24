@@ -3,7 +3,6 @@ package com.ivan.utils.collections;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.List;
 
 public final class CollectionUtils {
 	private CollectionUtils() {
@@ -16,7 +15,7 @@ public final class CollectionUtils {
 	 * @param values the list of <code>Boolean</code>s
 	 * @return an array of <code>boolean</code>s
 	 */
-	public static boolean[] toBooleanArray(final List<Boolean> values) {
+	public static boolean[] toBooleanArray(final Collection<Boolean> values) {
 		final boolean[] items = new boolean[values.size()];
 		final Iterator<Boolean> iterator = values.iterator();
 		for (int i = 0; i < items.length; i++) {
@@ -32,7 +31,7 @@ public final class CollectionUtils {
 	 * @param values the list of <code>Byte</code>s
 	 * @return an array of <code>byte</code>s
 	 */
-	public static byte[] toByteArray(final List<Byte> values) {
+	public static byte[] toByteArray(final Collection<Byte> values) {
 		final byte[] items = new byte[values.size()];
 		final Iterator<Byte> iterator = values.iterator();
 		for (int i = 0; i < items.length; i++) {
@@ -48,7 +47,7 @@ public final class CollectionUtils {
 	 * @param values the list of <code>Character</code>s
 	 * @return an array of <code>char</code>s
 	 */
-	public static char[] toCharArray(final List<Character> values) {
+	public static char[] toCharArray(final Collection<Character> values) {
 		final char[] items = new char[values.size()];
 		final Iterator<Character> iterator = values.iterator();
 		for (int i = 0; i < items.length; i++) {
@@ -64,7 +63,7 @@ public final class CollectionUtils {
 	 * @param values the list of <code>Short</code>s
 	 * @return an array of <code>short</code>s
 	 */
-	public static short[] toShortArray(final List<Short> values) {
+	public static short[] toShortArray(final Collection<Short> values) {
 		final short[] items = new short[values.size()];
 		final Iterator<Short> iterator = values.iterator();
 		for (int i = 0; i < items.length; i++) {
@@ -80,7 +79,7 @@ public final class CollectionUtils {
 	 * @param values the list of <code>Integer</code>s
 	 * @return an array of <code>int</code>s
 	 */
-	public static int[] toIntArray(final List<Integer> values) {
+	public static int[] toIntArray(final Collection<Integer> values) {
 		final int[] items = new int[values.size()];
 		final Iterator<Integer> iterator = values.iterator();
 		for (int i = 0; i < items.length; i++) {
@@ -96,7 +95,7 @@ public final class CollectionUtils {
 	 * @param values the list of <code>Long</code>s
 	 * @return an array of <code>long</code>s
 	 */
-	public static long[] toLongArray(final List<Long> values) {
+	public static long[] toLongArray(final Collection<Long> values) {
 		final long[] items = new long[values.size()];
 		final Iterator<Long> iterator = values.iterator();
 		for (int i = 0; i < items.length; i++) {
@@ -112,7 +111,7 @@ public final class CollectionUtils {
 	 * @param values the list of <code>Float</code>s
 	 * @return an array of <code>float</code>s
 	 */
-	public static float[] toFloatArray(final List<Float> values) {
+	public static float[] toFloatArray(final Collection<Float> values) {
 		final float[] items = new float[values.size()];
 		final Iterator<Float> iterator = values.iterator();
 		for (int i = 0; i < items.length; i++) {
@@ -128,7 +127,7 @@ public final class CollectionUtils {
 	 * @param values the list of <code>Double</code>s
 	 * @return an array of <code>double</code>s
 	 */
-	public static double[] toDoubleArray(final List<Double> values) {
+	public static double[] toDoubleArray(final Collection<Double> values) {
 		final double[] items = new double[values.size()];
 		final Iterator<Double> iterator = values.iterator();
 		for (int i = 0; i < items.length; i++) {
