@@ -7,15 +7,15 @@ import java.util.List;
 
 public class ComparatorsTest {
     private static class Person implements Comparable<Person> {
-        private String name;
+        private final String name;
 
-        private int age;
+        private final int age;
 
-        private int id;
+        private final int id;
 
         private static int idSeq;
 
-        public Person(String name, int age) {
+        public Person(final String name, final int age) {
             this.name = name;
             this.age = age;
             id = idSeq++;
@@ -26,7 +26,7 @@ public class ComparatorsTest {
         }
 
         @Override
-        public int compareTo(Person o) {
+        public int compareTo(final Person o) {
             System.out.println("name comparison: " + name + "  " + o.name);
             return name.compareTo(o.name);
         }
@@ -37,13 +37,13 @@ public class ComparatorsTest {
         }
     }
 
-    public static void main(String[] args) {
-        CompositeComparator<Person> cmp = CompositeComparator.<Person> newBuilder()
+    public static void main(final String[] args) {
+        final CompositeComparator<Person> cmp = CompositeComparator.<Person> newBuilder()
                 .add(new Comparator<Person>() {
                     @Override
-                    public int compare(Person o1, Person o2) {
-                        int a1 = o1.getAge();
-                        int a2 = o2.getAge();
+                    public int compare(final Person o1, final Person o2) {
+                        final int a1 = o1.getAge();
+                        final int a2 = o2.getAge();
                         System.out.println(" age comparison: " + a1 + "  " + a2);
                         return a1 < a2 ? -1 : a1 > a2 ? 1 : 0;
                     }
@@ -51,7 +51,7 @@ public class ComparatorsTest {
                 .add(new ComparableComparator<Person>())
                 .build();
 
-        List<Person> people = new ArrayList<Person>();
+        final List<Person> people = new ArrayList<Person>();
         people.add(new Person("Joe", 26));
         people.add(new Person("Sally", 32));
         people.add(new Person("Joe", 17));
@@ -59,7 +59,7 @@ public class ComparatorsTest {
         people.add(new Person("Sally", 26));
 
         Collections.sort(people, cmp);
-        for (Person person : people) {
+        for (final Person person : people) {
             System.out.println(person);
         }
     }

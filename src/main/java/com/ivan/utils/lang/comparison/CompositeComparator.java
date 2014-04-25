@@ -6,44 +6,44 @@ import java.util.Comparator;
 import java.util.List;
 
 public class CompositeComparator<T extends Comparable<T>> implements Comparator<T> {
-	private final Comparator<T>[] comparators;
+    private final Comparator<T>[] comparators;
 
-	public CompositeComparator(final Comparator<T>... comparators) {
-		this.comparators = comparators.clone();
-	}
+    public CompositeComparator(final Comparator<T>... comparators) {
+        this.comparators = comparators.clone();
+    }
 
-	public CompositeComparator(final Collection<Comparator<T>> comparators) {
-		this.comparators = comparators.toArray(new Comparator[comparators.size()]);
-	}
+    public CompositeComparator(final Collection<Comparator<T>> comparators) {
+        this.comparators = comparators.toArray(new Comparator[comparators.size()]);
+    }
 
-	public static <T extends Comparable<T>> CompositeComparatorBuilder<T> newBuilder() {
-		return new CompositeComparatorBuilder<T>();
-	}
+    public static <T extends Comparable<T>> CompositeComparatorBuilder<T> newBuilder() {
+        return new CompositeComparatorBuilder<T>();
+    }
 
-	@Override
-	public int compare(final T o1, final T o2) {
-		for (final Comparator<T> comparator : comparators) {
-			final int cmp = comparator.compare(o1, o2);
-			if (cmp != 0) {
-				return cmp;
-			}
-		}
-		return 0;
-	}
+    @Override
+    public int compare(final T o1, final T o2) {
+        for (final Comparator<T> comparator : comparators) {
+            final int cmp = comparator.compare(o1, o2);
+            if (cmp != 0) {
+                return cmp;
+            }
+        }
+        return 0;
+    }
 
-	public static class CompositeComparatorBuilder<T extends Comparable<T>> {
-		private final List<Comparator<T>> comparators = new ArrayList<Comparator<T>>();
+    public static class CompositeComparatorBuilder<T extends Comparable<T>> {
+        private final List<Comparator<T>> comparators = new ArrayList<Comparator<T>>();
 
-		CompositeComparatorBuilder() {
-		}
+        CompositeComparatorBuilder() {
+        }
 
-		public CompositeComparatorBuilder<T> add(final Comparator<T> comparator) {
-			comparators.add(comparator);
-			return this;
-		}
+        public CompositeComparatorBuilder<T> add(final Comparator<T> comparator) {
+            comparators.add(comparator);
+            return this;
+        }
 
-		public CompositeComparator<T> build() {
-			return new CompositeComparator<T>(comparators);
-		}
-	}
+        public CompositeComparator<T> build() {
+            return new CompositeComparator<T>(comparators);
+        }
+    }
 }

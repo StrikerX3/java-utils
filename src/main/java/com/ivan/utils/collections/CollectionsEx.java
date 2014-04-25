@@ -9,7 +9,8 @@ import java.util.ListIterator;
 
 /**
  * Complements <code>java.util.Collections</code> with additional operations on
- * collections.
+ * collections. Most of this class is obsolete in Java 8 due to the new stream()
+ * and lambda capabilities of that version.
  */
 public final class CollectionsEx {
 	private CollectionsEx() {
@@ -59,7 +60,7 @@ public final class CollectionsEx {
 	/**
 	 * Converts a list of <code>Boolean</code> objects into an array of
 	 * primitive <code>boolean</code>s.
-	 * 
+	 *
 	 * @param values the list of <code>Boolean</code>s
 	 * @return an array of <code>boolean</code>s
 	 */
@@ -75,7 +76,7 @@ public final class CollectionsEx {
 	/**
 	 * Converts a list of <code>Byte</code> objects into an array of
 	 * primitive <code>byte</code>s.
-	 * 
+	 *
 	 * @param values the list of <code>Byte</code>s
 	 * @return an array of <code>byte</code>s
 	 */
@@ -91,7 +92,7 @@ public final class CollectionsEx {
 	/**
 	 * Converts a list of <code>Character</code> objects into an array of
 	 * primitive <code>char</code>s.
-	 * 
+	 *
 	 * @param values the list of <code>Character</code>s
 	 * @return an array of <code>char</code>s
 	 */
@@ -107,7 +108,7 @@ public final class CollectionsEx {
 	/**
 	 * Converts a list of <code>Short</code> objects into an array of
 	 * primitive <code>int</code>s.
-	 * 
+	 *
 	 * @param values the list of <code>Short</code>s
 	 * @return an array of <code>short</code>s
 	 */
@@ -123,7 +124,7 @@ public final class CollectionsEx {
 	/**
 	 * Converts a list of <code>Integer</code> objects into an array of
 	 * primitive <code>int</code>s.
-	 * 
+	 *
 	 * @param values the list of <code>Integer</code>s
 	 * @return an array of <code>int</code>s
 	 */
@@ -139,7 +140,7 @@ public final class CollectionsEx {
 	/**
 	 * Converts a list of <code>Long</code> objects into an array of
 	 * primitive <code>long</code>s.
-	 * 
+	 *
 	 * @param values the list of <code>Long</code>s
 	 * @return an array of <code>long</code>s
 	 */
@@ -155,7 +156,7 @@ public final class CollectionsEx {
 	/**
 	 * Converts a list of <code>Float</code> objects into an array of
 	 * primitive <code>float</code>s.
-	 * 
+	 *
 	 * @param values the list of <code>Float</code>s
 	 * @return an array of <code>float</code>s
 	 */
@@ -171,7 +172,7 @@ public final class CollectionsEx {
 	/**
 	 * Converts a list of <code>Double</code> objects into an array of
 	 * primitive <code>double</code>s.
-	 * 
+	 *
 	 * @param values the list of <code>Double</code>s
 	 * @return an array of <code>double</code>s
 	 */
@@ -189,7 +190,7 @@ public final class CollectionsEx {
 	/**
 	 * Converts an array of <code>boolean</code> values into an
 	 * <code>Iterable</code> of <code>Boolean</code> objects.
-	 * 
+	 *
 	 * @param values the array of <code>boolean</code>s
 	 * @return an <code>Iterable</code> of <code>Boolean</code>s
 	 */
@@ -222,7 +223,7 @@ public final class CollectionsEx {
 	/**
 	 * Converts an array of <code>byte</code> values into an
 	 * <code>Iterable</code> of <code>Byte</code> objects.
-	 * 
+	 *
 	 * @param values the array of <code>byte</code>s
 	 * @return an <code>Iterable</code> of <code>Byte</code>s
 	 */
@@ -255,7 +256,7 @@ public final class CollectionsEx {
 	/**
 	 * Converts an array of <code>char</code> values into an
 	 * <code>Iterable</code> of <code>Character</code> objects.
-	 * 
+	 *
 	 * @param values the array of <code>char</code>s
 	 * @return an <code>Iterable</code> of <code>Character</code>s
 	 */
@@ -288,7 +289,7 @@ public final class CollectionsEx {
 	/**
 	 * Converts an array of <code>short</code> values into an
 	 * <code>Iterable</code> of <code>Short</code> objects.
-	 * 
+	 *
 	 * @param values the array of <code>short</code>s
 	 * @return an <code>Iterable</code> of <code>Short</code>s
 	 */
@@ -321,7 +322,7 @@ public final class CollectionsEx {
 	/**
 	 * Converts an array of <code>int</code> values into an
 	 * <code>Iterable</code> of <code>Integer</code> objects.
-	 * 
+	 *
 	 * @param values the array of <code>int</code>s
 	 * @return an <code>Iterable</code> of <code>Integer</code>s
 	 */
@@ -354,7 +355,7 @@ public final class CollectionsEx {
 	/**
 	 * Converts an array of <code>long</code> values into an
 	 * <code>Iterable</code> of <code>Long</code> objects.
-	 * 
+	 *
 	 * @param values the array of <code>long</code>s
 	 * @return an <code>Iterable</code> of <code>Long</code>s
 	 */
@@ -387,7 +388,7 @@ public final class CollectionsEx {
 	/**
 	 * Converts an array of <code>float</code> values into an
 	 * <code>Iterable</code> of <code>Float</code> objects.
-	 * 
+	 *
 	 * @param values the array of <code>float</code>s
 	 * @return an <code>Iterable</code> of <code>Float</code>s
 	 */
@@ -420,7 +421,7 @@ public final class CollectionsEx {
 	/**
 	 * Converts an array of <code>double</code> values into an
 	 * <code>Iterable</code> of <code>Double</code> objects.
-	 * 
+	 *
 	 * @param values the array of <code>double</code>s
 	 * @return an <code>Iterable</code> of <code>Double</code>s
 	 */
@@ -457,7 +458,7 @@ public final class CollectionsEx {
 	 * method returns an <code>ArrayList</code> containing all elements returned
 	 * by the iterator generated by <code>iterable</code> in the order they are
 	 * returned.
-	 * 
+	 *
 	 * @param iterable the iterable to convert
 	 * @return a <code>Collection</code> containing all elements of the iterable
 	 */

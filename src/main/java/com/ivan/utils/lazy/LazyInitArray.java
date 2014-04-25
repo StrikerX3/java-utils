@@ -27,7 +27,7 @@ public abstract class LazyInitArray<T> {
 
 	/**
 	 * Creates a lazily initialized array of objects of the given type and size.
-	 * 
+	 *
 	 * @param type the object type
 	 * @param size the number of elements in the array
 	 */
@@ -39,7 +39,7 @@ public abstract class LazyInitArray<T> {
 
 	/**
 	 * Retrieves a copy of the array, initializing all unitialized elements.
-	 * 
+	 *
 	 * @return a copy of the array with all elements initialized
 	 */
 	public T[] get() {
@@ -52,7 +52,7 @@ public abstract class LazyInitArray<T> {
 
 	/**
 	 * Retrieves the element at the given index, initializing it if necessary.
-	 * 
+	 *
 	 * @param index the element index
 	 * @return the element
 	 */
@@ -70,7 +70,7 @@ public abstract class LazyInitArray<T> {
 
 	/**
 	 * Initializes the value at the given index.
-	 * 
+	 *
 	 * @param index the element index
 	 * @return the initialized element
 	 */

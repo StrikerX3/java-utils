@@ -21,7 +21,8 @@ public class CollatzDepth {
 
 	static Map<BigInteger, Long> bigintCache = new HashMap<BigInteger, Long>();
 
-	private static long collatzDepth(BigInteger n) throws IllegalArgumentException {
+	private static long collatzDepth(final BigInteger nn) throws IllegalArgumentException {
+		BigInteger n = nn;
 		if (n.compareTo(BigInteger.ONE) < 0) {
 			throw new IllegalArgumentException("n must be >= 1");
 		}
@@ -77,7 +78,8 @@ public class CollatzDepth {
 		return depth;
 	}
 
-	private static int collatzDepth(int n) throws IllegalArgumentException {
+	private static int collatzDepth(final int nn) throws IllegalArgumentException {
+		int n = nn;
 		if (n < 1) {
 			throw new IllegalArgumentException("n must be >= 1");
 		}

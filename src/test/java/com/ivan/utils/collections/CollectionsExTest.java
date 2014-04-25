@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.ivan.utils.math.bits.BitMath;
 
+// this is obsolete with Java 8
 public class CollectionsExTest {
 	public static void main(final String[] args) {
 		final List<Integer> nums = Arrays.asList(1, 2, 4, 5, 7, 8, 9, 10, 15, 16);

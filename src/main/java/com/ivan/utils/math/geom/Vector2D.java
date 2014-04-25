@@ -55,13 +55,6 @@ public class Vector2D {
 		return x * other.x + y * other.y;
 	}
 
-	public Vector2D cross(final Vector2D other) {
-		final Vector2D vec = new Vector2D();
-		vec.x = -other.y;
-		vec.y = other.x;
-		return vec;
-	}
-
 	public Vector2D normalize() {
 		if (x == 0 && y == 0) {
 			return new Vector2D();

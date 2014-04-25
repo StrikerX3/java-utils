@@ -170,25 +170,25 @@ public class Vector3D {
 		return new Vector3D(u, v, w);
 	}
 
-	public Vector3D rotateAxisAngle(final Vector3D axis, final double angle) {
+	public static Vector3D rotateAxisAngle(final Vector3D axis, final double angle) {
 		final double cos = Math.cos(angle);
 		final double sin = Math.sin(angle);
 		return rotateAxisAngle(axis, cos, sin);
 	}
 
-	public Vector3D fastRotateAxisAngle(final Vector3D axis, final double angle) {
+	public static Vector3D fastRotateAxisAngle(final Vector3D axis, final double angle) {
 		final double cos = FastMath.cos(angle);
 		final double sin = FastMath.sin(angle);
 		return rotateAxisAngle(axis, cos, sin);
 	}
 
-	public Vector3D fastLerpRotateAxisAngle(final Vector3D axis, final double angle) {
+	public static Vector3D fastLerpRotateAxisAngle(final Vector3D axis, final double angle) {
 		final double cos = FastMath.cosLerp(angle);
 		final double sin = FastMath.sinLerp(angle);
 		return rotateAxisAngle(axis, cos, sin);
 	}
 
-	public Vector3D fastSlerpRotateAxisAngle(final Vector3D axis, final double angle) {
+	public static Vector3D fastSlerpRotateAxisAngle(final Vector3D axis, final double angle) {
 		final double cos = FastMath.cosSlerp(angle);
 		final double sin = FastMath.sinSlerp(angle);
 		return rotateAxisAngle(axis, cos, sin);

@@ -47,28 +47,28 @@ public class UnsignedTests {
 		System.out.println("n >= " + numStr + " ? " + n.gte(num)); // true
 	}
 
-	private static Unsigned add(Unsigned n, final long amt) {
-		n = n.add(amt);
-		System.out.println("n + " + amt + " = " + n);
-		return n;
+	private static Unsigned add(final Unsigned n, final long amt) {
+		final Unsigned nn = n.add(amt);
+		System.out.println("n + " + amt + " = " + nn);
+		return nn;
 	}
 
-	private static Unsigned sub(Unsigned n, final long amt) {
-		n = n.sub(amt);
-		System.out.println("n - " + amt + " = " + n);
-		return n;
+	private static Unsigned sub(final Unsigned n, final long amt) {
+		final Unsigned nn = n.sub(amt);
+		System.out.println("n - " + amt + " = " + nn);
+		return nn;
 	}
 
-	private static Unsigned mult(Unsigned n, final long amt) {
-		n = n.mult(amt);
-		System.out.println("n * " + amt + " = " + n);
-		return n;
+	private static Unsigned mult(final Unsigned n, final long amt) {
+		final Unsigned nn = n.mult(amt);
+		System.out.println("n * " + amt + " = " + nn);
+		return nn;
 	}
 
-	private static Unsigned div(Unsigned n, final long amt) {
-		n = n.div(amt);
-		System.out.println("n / " + amt + " = " + n);
-		return n;
+	private static Unsigned div(final Unsigned n, final long amt) {
+		final Unsigned nn = n.div(amt);
+		System.out.println("n / " + amt + " = " + nn);
+		return nn;
 	}
 
 	private static void testUInt(final Class<? extends Unsigned> cls) throws Exception {
