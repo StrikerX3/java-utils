@@ -5,7 +5,7 @@ Utility classes for Java.
 
  * **Collections** (beta):
      * Hashmaps with int and long primitives as keys, much faster than Java's HashMap&lt;Integer, ?>
-     * map/reduce/transform for arrays (compatible with Java 8 lambda expressions). Also for Collections, redundant with Java 8 but useful for earlier versions.
+     * map/filter/reduce for arrays (compatible with Java 8 lambda expressions). Also for Collections, redundant with Java 8 but useful for earlier versions.
      * Convert T[] to Iterable&lt;T>
      * Convert Iterable&lt;T> to Collection&lt;T>
      * Convert Collections of boxed types to arrays of primitive types
