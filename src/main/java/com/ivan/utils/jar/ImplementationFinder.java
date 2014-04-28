@@ -40,7 +40,6 @@ public final class ImplementationFinder {
         }
         final List<ImplementationJAR<T>> implementations = new ArrayList<ImplementationJAR<T>>();
         for (final File file : jars) {
-            @SuppressWarnings("resource")
             final URLClassLoader cl = new URLClassLoader(new URL[] { file.toURI().toURL() });
             final ImplementationJAR<T> implJar = new ImplementationJAR<T>(file);
             final JarFile jarFile = new JarFile(file);
