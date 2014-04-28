@@ -1,7 +1,7 @@
 java-utils
 ==========
 
-Utility classes for Java.
+Utility classes for Java. Needs work on some places.
 
  * **Collections** (beta):
      * Hashmaps with int and long primitives as keys, much faster than Java's HashMap&lt;Integer, ?>
@@ -11,7 +11,7 @@ Utility classes for Java.
      * Convert Collections of boxed types to arrays of primitive types
  * **JAR/Classpath** (alpha):
      * Find classes that implement or extend any class within JARs not currently loaded in the classpath
-    * Native library helper: loads native libraries from the classpath, extracting from jar files if necessary
+     * Native library helper: loads native libraries from the classpath, extracting from jar files if necessary
  * **Lang** (beta):
      * Circular buffer (needs improvements, currently only for int primitives)
      * hashCode, equals, toString with null-safety (redundant with Java 7's Objects)
