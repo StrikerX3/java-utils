@@ -1,4 +1,4 @@
-package com.ivan.utils.math.geom;
+package com.ivan.utils.math.geometry;
 
 public class Box {
     public Point3D origin;

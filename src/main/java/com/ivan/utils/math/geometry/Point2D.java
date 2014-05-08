@@ -1,9 +1,11 @@
-package com.ivan.utils.math.geom;
+package com.ivan.utils.math.geometry;
+
+import com.ivan.utils.space.Point;
 
 /**
  * A point in a bidimensional space.
  */
-public class Point2D {
+public class Point2D implements Point {
     public double x, y;
 
     public Point2D() {
@@ -64,5 +66,22 @@ public class Point2D {
     @Override
     public String toString() {
         return "Point2D[" + x + ", " + y + "]";
+    }
+
+    @Override
+    public int getDimensions() {
+        return 2;
+    }
+
+    @Override
+    public double get(final int axis) {
+        switch (axis) {
+            case 0:
+                return x;
+            case 1:
+                return y;
+            default:
+                throw new IllegalArgumentException();
+        }
     }
 }

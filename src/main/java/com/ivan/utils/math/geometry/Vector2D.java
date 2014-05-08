@@ -1,4 +1,4 @@
-package com.ivan.utils.math.geom;
+package com.ivan.utils.math.geometry;
 
 import com.ivan.utils.math.FastMath;
 

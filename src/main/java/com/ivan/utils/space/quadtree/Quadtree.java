@@ -4,7 +4,7 @@ import java.util.Collection;
 
 import com.ivan.utils.collections.ArraysEx;
 import com.ivan.utils.collections.Predicate;
-import com.ivan.utils.space.Point2D;
+import com.ivan.utils.math.geometry.Point2D;
 
 public final class Quadtree<T extends Point2D> {
     private boolean leaf;
@@ -32,15 +32,15 @@ public final class Quadtree<T extends Point2D> {
             leaf = false;
 
             // determine bounding box
-            minX = maxX = values[0].getX();
-            minY = maxY = values[0].getY();
+            minX = maxX = values[0].x;
+            minY = maxY = values[0].y;
 
             for (int i = 1; i < values.length; i++) {
-                minX = Math.min(minX, values[i].getX());
-                minY = Math.min(minY, values[i].getY());
+                minX = Math.min(minX, values[i].x);
+                minY = Math.min(minY, values[i].y);
 
-                maxX = Math.max(maxX, values[i].getX());
-                maxY = Math.max(maxY, values[i].getY());
+                maxX = Math.max(maxX, values[i].x);
+                maxY = Math.max(maxY, values[i].y);
             }
 
             // calculate center of box
@@ -65,8 +65,8 @@ public final class Quadtree<T extends Point2D> {
         final T[] valuesWithinBox = ArraysEx.keep(values, new Predicate<T>() {
             @Override
             public boolean evaluate(final T node) {
-                final double x = node.getX();
-                final double y = node.getY();
+                final double x = node.x;
+                final double y = node.y;
 
                 final boolean withinX = x >= minX && (includeMaxX ? x <= maxX : x < maxX);
                 final boolean withinY = y >= minY && (includeMaxY ? y <= maxY : y < maxY);
@@ -101,8 +101,8 @@ public final class Quadtree<T extends Point2D> {
         }
 
         // find out in which quadrant the value is in
-        final double x = value.getX();
-        final double y = value.getY();
+        final double x = value.x;
+        final double y = value.y;
 
         /*System.out.println();
         System.out.println(x + "x" + y + "  " + cX + "x" + cY);

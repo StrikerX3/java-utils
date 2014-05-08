@@ -1,5 +1,12 @@
 package com.ivan.utils.math.geom;
 
+import com.ivan.utils.math.geometry.Circle;
+import com.ivan.utils.math.geometry.Line2D;
+import com.ivan.utils.math.geometry.Line3D;
+import com.ivan.utils.math.geometry.Point2D;
+import com.ivan.utils.math.geometry.Rectangle;
+import com.ivan.utils.math.geometry.Vector2D;
+
 public class GeometryTest {
     private static void performanceTest() {
         for (int k = 0; k < 20; k++) {

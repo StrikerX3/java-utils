@@ -1,4 +1,4 @@
-package com.ivan.utils.math.geom;
+package com.ivan.utils.math.geometry;
 
 public class Line2D {
     public Point2D p1, p2;

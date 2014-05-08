@@ -1,15 +1,15 @@
 package com.ivan.utils.space.octree;
 
-import com.ivan.utils.space.Point3D;
+import com.ivan.utils.math.geometry.Point3D;
 
 public interface OctreeVisitor<T extends Point3D> {
-	void visitNode(int depth, OctreeNodePosition pos);
+    void visitNode(int depth, OctreeNodePosition pos);
 
-	void leaveNode(int depth, OctreeNodePosition pos);
+    void leaveNode(int depth, OctreeNodePosition pos);
 
-	void visitLeaf(T leaf, int depth, OctreeNodePosition pos);
+    void visitLeaf(T leaf, int depth, OctreeNodePosition pos);
 
-	void leaveLeaf(T leaf, int depth, OctreeNodePosition pos);
+    void leaveLeaf(T leaf, int depth, OctreeNodePosition pos);
 }
 
 /*

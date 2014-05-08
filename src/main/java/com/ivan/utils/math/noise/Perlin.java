@@ -1,6 +1,6 @@
 package com.ivan.utils.math.noise;
 
-import com.ivan.utils.math.geom.Point3D;
+import com.ivan.utils.math.geometry.Point3D;
 
 
 public class Perlin {

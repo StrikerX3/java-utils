@@ -4,7 +4,7 @@ import java.util.Collection;
 
 import com.ivan.utils.collections.ArraysEx;
 import com.ivan.utils.collections.Predicate;
-import com.ivan.utils.space.Point3D;
+import com.ivan.utils.math.geometry.Point3D;
 
 public final class Octree<T extends Point3D> {
     private boolean leaf;
@@ -37,18 +37,18 @@ public final class Octree<T extends Point3D> {
             leaf = false;
 
             // determine bounding box
-            minX = maxX = values[0].getX();
-            minY = maxY = values[0].getY();
-            minZ = maxZ = values[0].getZ();
+            minX = maxX = values[0].x;
+            minY = maxY = values[0].y;
+            minZ = maxZ = values[0].z;
 
             for (int i = 1; i < values.length; i++) {
-                minX = Math.min(minX, values[i].getX());
-                minY = Math.min(minY, values[i].getY());
-                minZ = Math.min(minZ, values[i].getZ());
+                minX = Math.min(minX, values[i].x);
+                minY = Math.min(minY, values[i].y);
+                minZ = Math.min(minZ, values[i].z);
 
-                maxX = Math.max(maxX, values[i].getX());
-                maxY = Math.max(maxY, values[i].getY());
-                maxZ = Math.max(maxZ, values[i].getZ());
+                maxX = Math.max(maxX, values[i].x);
+                maxY = Math.max(maxY, values[i].y);
+                maxZ = Math.max(maxZ, values[i].z);
             }
 
             // calculate center of cube
@@ -79,9 +79,9 @@ public final class Octree<T extends Point3D> {
         final T[] valuesWithinBox = ArraysEx.keep(values, new Predicate<T>() {
             @Override
             public boolean evaluate(final T node) {
-                final double x = node.getX();
-                final double y = node.getY();
-                final double z = node.getZ();
+                final double x = node.x;
+                final double y = node.y;
+                final double z = node.z;
 
                 final boolean withinX = x >= minX && (includeMaxX ? x <= maxX : x < maxX);
                 final boolean withinY = y >= minY && (includeMaxY ? y <= maxY : y < maxY);
@@ -117,9 +117,9 @@ public final class Octree<T extends Point3D> {
         }
 
         // find out in which octant the value is in
-        final double x = value.getX();
-        final double y = value.getY();
-        final double z = value.getZ();
+        final double x = value.x;
+        final double y = value.y;
+        final double z = value.z;
 
         /*System.out.println();
         System.out.println(x + "x" + y + "x" + z + "  " + cX + "x" + cY + "x" + cZ);

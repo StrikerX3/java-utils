@@ -1,15 +1,15 @@
 package com.ivan.utils.space.quadtree;
 
-import com.ivan.utils.space.Point2D;
+import com.ivan.utils.math.geometry.Point2D;
 
 public interface QuadtreeVisitor<T extends Point2D> {
-	void visitNode(int depth, QuadtreeNodePosition pos);
+    void visitNode(int depth, QuadtreeNodePosition pos);
 
-	void leaveNode(int depth, QuadtreeNodePosition pos);
+    void leaveNode(int depth, QuadtreeNodePosition pos);
 
-	void visitLeaf(T leaf, int depth, QuadtreeNodePosition pos);
+    void visitLeaf(T leaf, int depth, QuadtreeNodePosition pos);
 
-	void leaveLeaf(T leaf, int depth, QuadtreeNodePosition pos);
+    void leaveLeaf(T leaf, int depth, QuadtreeNodePosition pos);
 }
 
 /*

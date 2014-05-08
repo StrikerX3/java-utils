@@ -1,9 +1,11 @@
-package com.ivan.utils.math.geom;
+package com.ivan.utils.math.geometry;
+
+import com.ivan.utils.space.Point;
 
 /**
  * A point in a tridimensional space.
  */
-public class Point3D {
+public class Point3D implements Point {
     public double x, y, z;
 
     public Point3D() {
@@ -68,5 +70,24 @@ public class Point3D {
     @Override
     public String toString() {
         return "Point3D[" + x + ", " + y + ", " + z + "]";
+    }
+
+    @Override
+    public int getDimensions() {
+        return 3;
+    }
+
+    @Override
+    public double get(final int axis) {
+        switch (axis) {
+            case 0:
+                return x;
+            case 1:
+                return y;
+            case 2:
+                return z;
+            default:
+                throw new IllegalArgumentException();
+        }
     }
 }
