@@ -1,14 +1,10 @@
-package com.ivan.utils.math.geom;
-
-import com.ivan.utils.math.geometry.Circle;
-import com.ivan.utils.math.geometry.Segment2D;
-import com.ivan.utils.math.geometry.Segment3D;
-import com.ivan.utils.math.geometry.Point2D;
-import com.ivan.utils.math.geometry.Rectangle;
-import com.ivan.utils.math.geometry.Vector2D;
+package com.ivan.utils.math.geometry;
 
 public class GeometryTest {
     public static void main(final String[] args) {
+        // see http://geomalgorithms.com/a07-_distance.html
+        // see also the rest
+
         final Point2D p = new Point2D(1, 2);
         final Segment2D l = new Segment2D(1, 3, 4, 3);
         final Vector2D v = new Vector2D(2, 3);
