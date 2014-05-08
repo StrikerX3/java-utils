@@ -88,7 +88,6 @@ public final class Quadtree<T extends Point2D> {
         return new Quadtree<T>(values);
     }
 
-    @SuppressWarnings("unchecked")
     public static <T extends Point2D> Quadtree<T> build(final Collection<T> values) {
         return build((T[]) values.toArray(new Object[values.size()]));
     }

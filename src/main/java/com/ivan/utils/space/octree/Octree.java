@@ -104,7 +104,6 @@ public final class Octree<T extends Point3D> {
         return new Octree<T>(values);
     }
 
-    @SuppressWarnings("unchecked")
     public static <T extends Point3D> Octree<T> build(final Collection<T> values) {
         return build((T[]) values.toArray(new Object[values.size()]));
     }

@@ -58,14 +58,14 @@ public class GapSearch {
 
         for (int max = 1; max < 30; max++) {
             final int min = 1;
-            // busca as lacunas entre min e max deixadas pelas faixas acima
+            // find the gaps between min and max left by the ranges above
             final List<Range> gaps = findGaps(min, max, ranges);
             System.out.println(min + ".." + max + ": " + gaps);
         }
 
         for (int min = 1; min < 30; min++) {
             final int max = 30;
-            // busca as lacunas entre min e max deixadas pelas faixas acima
+            // find the gaps between min and max left by the ranges above
             final List<Range> gaps = findGaps(min, max, ranges);
             System.out.println(min + ".." + max + ": " + gaps);
         }

@@ -8,18 +8,6 @@ import com.ivan.utils.math.geometry.Rectangle;
 import com.ivan.utils.math.geometry.Vector2D;
 
 public class GeometryTest {
-    private static void performanceTest() {
-        for (int k = 0; k < 20; k++) {
-            final long time = System.currentTimeMillis();
-            Vector2D testVec = new Vector2D(1.2, 3.4);
-            for (int i = 0; i < 10000000; i++) {
-                testVec = testVec.rotate(15.0);
-            }
-            System.out.println(System.currentTimeMillis() - time);
-            System.out.println(testVec);
-        }
-    }
-
     public static void main(final String[] args) {
         final Point2D p = new Point2D(1, 2);
         final Line2D l = new Line2D(1, 3, 4, 3);
