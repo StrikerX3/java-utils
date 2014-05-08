@@ -29,7 +29,7 @@ Utility classes for Java. Needs work on some places.
      * Square root for BigDecimals
      * Least common multiple and greatest common divisor for int, long, BigInteger and BigDecimal
      * Faster trigonometrical functions based on lookup tables and nearest/linear/spline interpolation
-     * Bit math (based on Hacker's Delight bit twiddling techniques)
+     * Bit math for all integer primitive types: byte, short, int and long (based on Hacker's Delight bit twiddling techniques)
      * 2D and 3D points and vectors
      * Basic geometry
      * K-d trees, quadtrees, octrees
