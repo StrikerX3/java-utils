@@ -20,7 +20,7 @@ Utility classes for Java. Needs work on some places.
      * Composite comparator: combines multiple comparators into one
      * Unsigned boxed primitives and utility methods for basic arithmetic and toString with radix support, including longs (without resorting to BigInteger like Java 8 does)
      * Lazy initialization of objects
-     * Strongly types options and option sets
+     * Strongly typed options and option sets
  * **Math** (alpha):
      * Clamp values to a range
      * Min and max for multiple values
