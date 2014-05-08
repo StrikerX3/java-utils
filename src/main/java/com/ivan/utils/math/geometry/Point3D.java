@@ -63,7 +63,7 @@ public class Point3D implements Point {
         return new Vector3D(x, y, z);
     }
 
-    public Point3D projection(final Line3D line) {
+    public Point3D projection(final Segment3D line) {
         return line.projection(this);
     }
 

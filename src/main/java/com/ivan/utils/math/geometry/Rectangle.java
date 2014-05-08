@@ -47,16 +47,16 @@ public class Rectangle {
         };
     }
 
-    public Line2D[] getBoundaryLines() {
+    public Segment2D[] getBoundaryLines() {
         final double ox = origin.x;
         final double oy = origin.y;
         final double dx = ox + size.x;
         final double dy = oy + size.y;
-        return new Line2D[] {
-                new Line2D(ox, oy, dx, oy),
-                new Line2D(dx, oy, dx, dy),
-                new Line2D(dx, dy, ox, dy),
-                new Line2D(ox, dy, ox, oy)
+        return new Segment2D[] {
+                new Segment2D(ox, oy, dx, oy),
+                new Segment2D(dx, oy, dx, dy),
+                new Segment2D(dx, dy, ox, dy),
+                new Segment2D(ox, dy, ox, oy)
         };
     }
 

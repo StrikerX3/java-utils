@@ -1,8 +1,8 @@
 package com.ivan.utils.math.geom;
 
 import com.ivan.utils.math.geometry.Circle;
-import com.ivan.utils.math.geometry.Line2D;
-import com.ivan.utils.math.geometry.Line3D;
+import com.ivan.utils.math.geometry.Segment2D;
+import com.ivan.utils.math.geometry.Segment3D;
 import com.ivan.utils.math.geometry.Point2D;
 import com.ivan.utils.math.geometry.Rectangle;
 import com.ivan.utils.math.geometry.Vector2D;
@@ -10,7 +10,7 @@ import com.ivan.utils.math.geometry.Vector2D;
 public class GeometryTest {
     public static void main(final String[] args) {
         final Point2D p = new Point2D(1, 2);
-        final Line2D l = new Line2D(1, 3, 4, 3);
+        final Segment2D l = new Segment2D(1, 3, 4, 3);
         final Vector2D v = new Vector2D(2, 3);
         final Vector2D t = new Vector2D(3, 1);
 
@@ -56,22 +56,22 @@ public class GeometryTest {
 
         final Point2D r1 = new Point2D(3, 3);
         final Point2D r2 = new Point2D(3, 5);
-        final Line2D r = new Line2D(r1, r2);
+        final Segment2D r = new Segment2D(r1, r2);
         final Point2D pt = new Point2D(4, 4);
         System.out.println("Projection of " + pt + " into " + r + " = " + pt.projection(r));
 
-        final Line2D l1 = new Line2D(3, 3, 4, 4);
-        final Line2D l2 = new Line2D(3, 3, 3, 5);
+        final Segment2D l1 = new Segment2D(3, 3, 4, 4);
+        final Segment2D l2 = new Segment2D(3, 3, 3, 5);
         System.out.println("Projection of " + l1 + " into " + l2 + " = " + l1.projection(l2));
         System.out.println();
 
         // perpendicular and parallel
         System.out.println("Perpendicular and Parallel Lines");
         System.out.println("--------------------------------");
-        final Line2D lp0 = new Line2D(0, 0, 0, 1);
-        final Line2D lp1 = new Line2D(0, 0, 1, 0);
-        final Line2D lp2 = new Line2D(1, 0, 1, 1);
-        final Line2D lp3 = new Line2D(0, 0, 1, 1);
+        final Segment2D lp0 = new Segment2D(0, 0, 0, 1);
+        final Segment2D lp1 = new Segment2D(0, 0, 1, 0);
+        final Segment2D lp2 = new Segment2D(1, 0, 1, 1);
+        final Segment2D lp3 = new Segment2D(0, 0, 1, 1);
         printPerpParaTest(lp0, lp1);
         printPerpParaTest(lp0, lp2);
         printPerpParaTest(lp0, lp3);
@@ -80,16 +80,16 @@ public class GeometryTest {
         // line-line intersection
         System.out.println("2D Intersections");
         System.out.println("----------------");
-        final Line2D[] lines2d = new Line2D[] {
-                new Line2D(0, 0, 1, 1),
-                new Line2D(0, 1, 1, 0),
-                new Line2D(0, 1, 1, 2),
-                new Line2D(1, 0, 2, 0),
+        final Segment2D[] lines2d = new Segment2D[] {
+                new Segment2D(0, 0, 1, 1),
+                new Segment2D(0, 1, 1, 0),
+                new Segment2D(0, 1, 1, 2),
+                new Segment2D(1, 0, 2, 0),
         };
         for (int i = 0; i < lines2d.length; i++) {
-            final Line2D li = lines2d[i];
+            final Segment2D li = lines2d[i];
             for (int j = i + 1; j < lines2d.length; j++) {
-                final Line2D lj = lines2d[j];
+                final Segment2D lj = lines2d[j];
                 System.out.println(li + " and " + lj + ": " + li.intersectionPoint(lj));
             }
         }
@@ -98,17 +98,17 @@ public class GeometryTest {
         // TODO Line3D still not fully implemented, results are incorrect
         System.out.println("3D Intersections");
         System.out.println("----------------");
-        final Line3D[] lines3d = new Line3D[] {
-                new Line3D(0, 0, 0, 1, 1, 1),
-                new Line3D(1, 0, 1, 0, 1, 0),
-                new Line3D(2, 0, 1, 0, 1, 0),
-                new Line3D(1, 0, 2, 2, 1, 2),
+        final Segment3D[] lines3d = new Segment3D[] {
+                new Segment3D(0, 0, 0, 1, 1, 1),
+                new Segment3D(1, 0, 1, 0, 1, 0),
+                new Segment3D(2, 0, 1, 0, 1, 0),
+                new Segment3D(1, 0, 2, 2, 1, 2),
         };
 
         for (int i = 0; i < lines3d.length; i++) {
-            final Line3D li = lines3d[i];
+            final Segment3D li = lines3d[i];
             for (int j = i + 1; j < lines3d.length; j++) {
-                final Line3D lj = lines3d[j];
+                final Segment3D lj = lines3d[j];
                 System.out.println(li + " and " + lj + ": " + li.intersectionPoint(lj));
             }
         }
@@ -130,7 +130,7 @@ public class GeometryTest {
         System.out.println();
     }
 
-    private static void printLine(final Line2D l) {
+    private static void printLine(final Segment2D l) {
         System.out.println("l = " + l);
         System.out.println("  Length: " + l.length() + "; squared: " + l.lengthSq());
         System.out.println("  As vector: " + l.asVector());
@@ -161,8 +161,8 @@ public class GeometryTest {
             System.out.println("      " + point);
         }
         System.out.println("    Lines:");
-        final Line2D[] lnBounds = r.getBoundaryLines();
-        for (final Line2D line : lnBounds) {
+        final Segment2D[] lnBounds = r.getBoundaryLines();
+        for (final Segment2D line : lnBounds) {
             System.out.println("      " + line);
         }
         System.out.println();
@@ -174,7 +174,7 @@ public class GeometryTest {
         System.out.println();
     }
 
-    private static void printPerpParaTest(final Line2D l1, final Line2D l2) {
+    private static void printPerpParaTest(final Segment2D l1, final Segment2D l2) {
         System.out.println(l1 + " and " + l2 + " are" + (l1.isPerpendicular(l2) ? "" : " not") + " perpendicular," + (l1.isParallel(l2) ? "" : " not") + " parallel.");
     }
 }

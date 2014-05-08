@@ -1,17 +1,17 @@
 package com.ivan.utils.math.geometry;
 
-public class Line3D {
+public class Segment3D {
     public Point3D p1, p2;
 
-    public Line3D() {
+    public Segment3D() {
         this(new Point3D(), new Point3D());
     }
 
-    public Line3D(final double x1, final double y1, final double z1, final double x2, final double y2, final double z2) {
+    public Segment3D(final double x1, final double y1, final double z1, final double x2, final double y2, final double z2) {
         this(new Point3D(x1, y1, z1), new Point3D(x2, y2, z2));
     }
 
-    public Line3D(final Point3D p1, final Point3D p2) {
+    public Segment3D(final Point3D p1, final Point3D p2) {
         this.p1 = p1;
         this.p2 = p2;
     }
@@ -34,25 +34,25 @@ public class Line3D {
         return p1.add(proj);
     }
 
-    public Line3D projection(final Line3D line) {
+    public Segment3D projection(final Segment3D line) {
         final Vector3D proj = getVector().projection(line.getVector());
-        return new Line3D(p1, p1.add(proj));
+        return new Segment3D(p1, p1.add(proj));
     }
 
-    public boolean isPerpendicular(final Line3D line) {
+    public boolean isPerpendicular(final Segment3D line) {
         return getVector().dot(line.getVector()) == 0.0;
     }
 
-    public boolean isParallel(final Line3D line) {
+    public boolean isParallel(final Segment3D line) {
         return getVector().normalizeLocal().dot(line.getVector().normalizeLocal()) == 1.0;
     }
 
-    public double closestDistance(final Line3D line) {
+    public double closestDistance(final Segment3D line) {
         // TODO shortest distance between the two lines
         throw new UnsupportedOperationException();
     }
 
-    public Point3D[] closestPoints(final Line3D line) {
+    public Point3D[] closestPoints(final Segment3D line) {
         // TODO one point on each line that creates the shortest distance between them
         throw new UnsupportedOperationException();
     }
@@ -64,7 +64,7 @@ public class Line3D {
         throw new UnsupportedOperationException();
     }
 
-    public Point3D intersectionPoint(final Line3D line) {
+    public Point3D intersectionPoint(final Segment3D line) {
         // FIXME still incorrect
         // http://mathforum.org/library/drmath/view/62814.html
         final double dx1 = p2.x - p1.x;

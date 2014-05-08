@@ -55,26 +55,26 @@ public class Box {
         };
     }
 
-    public Line3D[] getBoundaryLines() {
+    public Segment3D[] getBoundaryLines() {
         final double ox = origin.x;
         final double oy = origin.y;
         final double oz = origin.z;
         final double dx = ox + size.x;
         final double dy = oy + size.y;
         final double dz = oz + size.z;
-        return new Line3D[] {
-                new Line3D(ox, oy, oz, dx, oy, oz),
-                new Line3D(dx, oy, oz, dx, dy, oz),
-                new Line3D(dx, dy, oz, ox, dy, oz),
-                new Line3D(ox, dy, oz, ox, oy, oz),
-                new Line3D(ox, oy, dz, dx, oy, dz),
-                new Line3D(dx, oy, dz, dx, dy, dz),
-                new Line3D(dx, dy, dz, ox, dy, dz),
-                new Line3D(ox, dy, dz, ox, oy, dz),
-                new Line3D(ox, oy, oz, ox, oy, dz),
-                new Line3D(dx, oy, oz, dx, oy, dz),
-                new Line3D(dx, dy, oz, dx, dy, dz),
-                new Line3D(ox, dy, oz, ox, dy, dz)
+        return new Segment3D[] {
+                new Segment3D(ox, oy, oz, dx, oy, oz),
+                new Segment3D(dx, oy, oz, dx, dy, oz),
+                new Segment3D(dx, dy, oz, ox, dy, oz),
+                new Segment3D(ox, dy, oz, ox, oy, oz),
+                new Segment3D(ox, oy, dz, dx, oy, dz),
+                new Segment3D(dx, oy, dz, dx, dy, dz),
+                new Segment3D(dx, dy, dz, ox, dy, dz),
+                new Segment3D(ox, dy, dz, ox, oy, dz),
+                new Segment3D(ox, oy, oz, ox, oy, dz),
+                new Segment3D(dx, oy, oz, dx, oy, dz),
+                new Segment3D(dx, dy, oz, dx, dy, dz),
+                new Segment3D(ox, dy, oz, ox, dy, dz)
         };
     }
 }

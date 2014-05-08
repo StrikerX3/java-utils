@@ -1,17 +1,17 @@
 package com.ivan.utils.math.geometry;
 
-public class Line2D {
+public class Segment2D {
     public Point2D p1, p2;
 
-    public Line2D() {
+    public Segment2D() {
         this(new Point2D(), new Point2D());
     }
 
-    public Line2D(final double x1, final double y1, final double x2, final double y2) {
+    public Segment2D(final double x1, final double y1, final double x2, final double y2) {
         this(new Point2D(x1, y1), new Point2D(x2, y2));
     }
 
-    public Line2D(final Point2D p1, final Point2D p2) {
+    public Segment2D(final Point2D p1, final Point2D p2) {
         this.p1 = p1;
         this.p2 = p2;
     }
@@ -33,20 +33,20 @@ public class Line2D {
         return p1.add(proj);
     }
 
-    public Line2D projection(final Line2D line) {
+    public Segment2D projection(final Segment2D line) {
         final Vector2D proj = asVector().projection(line.asVector());
-        return new Line2D(p1, p1.add(proj));
+        return new Segment2D(p1, p1.add(proj));
     }
 
-    public boolean isPerpendicular(final Line2D line) {
+    public boolean isPerpendicular(final Segment2D line) {
         return asVector().dot(line.asVector()) == 0.0;
     }
 
-    public boolean isParallel(final Line2D line) {
+    public boolean isParallel(final Segment2D line) {
         return asVector().normalizeLocal().dot(line.asVector().normalizeLocal()) == 1.0;
     }
 
-    public Point2D intersectionPoint(final Line2D line) {
+    public Point2D intersectionPoint(final Segment2D line) {
         final double dx1 = p2.x - p1.x;
         final double dy1 = p2.y - p1.y;
         final double dx2 = line.p2.x - line.p1.x;

@@ -59,7 +59,7 @@ public class Point2D implements Point {
         return new Vector2D(x, y);
     }
 
-    public Point2D projection(final Line2D line) {
+    public Point2D projection(final Segment2D line) {
         return line.projection(this);
     }
 
