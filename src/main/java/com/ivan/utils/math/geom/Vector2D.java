@@ -26,6 +26,10 @@ public class Vector2D {
         return this;
     }
 
+    public Vector2D dup() {
+        return new Vector2D(this);
+    }
+
     public double magnitudeSq() {
         return x * x + y * y;
     }
@@ -34,11 +38,11 @@ public class Vector2D {
         return Math.sqrt(magnitudeSq());
     }
 
-    public Vector2D getNormalLH() {
+    public Vector2D normalLH() {
         return new Vector2D(-y, x).normalizeLocal();
     }
 
-    public Vector2D getNormalRH() {
+    public Vector2D normalRH() {
         return new Vector2D(y, -x).normalizeLocal();
     }
 

@@ -27,6 +27,10 @@ public class Vector3D {
         return this;
     }
 
+    public Vector3D dup() {
+        return new Vector3D(this);
+    }
+
     public double magnitudeSq() {
         return x * x + y * y + z * z;
     }

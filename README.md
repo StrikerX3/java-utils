@@ -31,6 +31,7 @@ Utility classes for Java. Needs work on some places.
      * Faster trigonometrical functions based on lookup tables and nearest/linear/spline interpolation
      * Bit math (based on Hacker's Delight bit twiddling techniques)
      * 2D and 3D points and vectors
+     * Basic geometry
      * K-d trees, quadtrees, octrees
      * Integer ranges and gap search
  * **Misc** (beta):
