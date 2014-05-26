@@ -1,4 +1,4 @@
-package com.ivan.utils.collections;
+package com.ivan.utils.collections.map;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;

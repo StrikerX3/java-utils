@@ -9,6 +9,7 @@ Utility classes for Java. Needs work on some places.
      * Convert T[] to Iterable&lt;T>
      * Convert Iterable&lt;T> to Collection&lt;T>
      * Convert Collections of boxed types to arrays of primitive types
+     * Inline linked lists
  * **JAR/Classpath** (alpha):
      * Find classes that implement or extend any class within JARs not currently loaded in the classpath
      * Native library helper: loads native libraries from the classpath, extracting from jar files if necessary

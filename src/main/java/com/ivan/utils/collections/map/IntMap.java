@@ -1,4 +1,4 @@
-package com.ivan.utils.collections;
+package com.ivan.utils.collections.map;
 
 import java.lang.reflect.Array;
 import java.util.AbstractCollection;

@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-import com.ivan.utils.collections.IntMap;
-import com.ivan.utils.collections.LongMap;
+import com.ivan.utils.collections.map.IntMap;
+import com.ivan.utils.collections.map.LongMap;
 
 @SuppressWarnings("unused")
 public class CollatzDepth {
