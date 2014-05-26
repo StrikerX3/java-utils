@@ -4,7 +4,7 @@ package com.ivan.utils.collections.list;
  * An inline linked list node. Used as follows:
  * <pre>
  * // Create a linked list for names
- * ListNode&lt;String&gt; names = ListNode.root();
+ * ListNode&lt;String&gt; names = ListNode.create();
  * 
  * // Add elements to the end
  * ListNode&lt;String&gt; lastNode = names.add("John");
@@ -40,8 +40,9 @@ package com.ivan.utils.collections.list;
  * @param <T> the element type
  */
 public class ListNode<T> {
+    protected RootNode<T> root;
     private ListNode<T> prev;
-    private ListNode<T> next;
+    protected ListNode<T> next;
     private T value;
 
     private ListNode(final T e) {
@@ -67,15 +68,26 @@ public class ListNode<T> {
         return prev;
     }
 
+    public ListNode<T> first() {
+        return root.next;
+    }
+
+    public ListNode<T> last() {
+        return root.last();
+    }
+
     ////////////////
     // Modification
 
     public ListNode<T> add(final T e) {
         final ListNode<T> node = new ListNode<T>(e);
+        node.root = root;
         node.prev = this;
         node.next = next;
         if (hasNext()) {
             next.prev = node;
+        } else {
+            root.last = node;
         }
         this.next = node;
         return node;
@@ -88,9 +100,15 @@ public class ListNode<T> {
         }
         if (hasNext()) {
             next.prev = prev;
+        } else {
+            root.last = prev;
         }
         prev = next = null;
         return node;
+    }
+
+    public void clear() {
+        root.clear();
     }
 
     public T get() {
@@ -104,14 +122,33 @@ public class ListNode<T> {
     ////////////////
     // Root node
 
-    public static <T> ListNode<T> root() {
+    public static <T> ListNode<T> create() {
         return new RootNode<T>();
     }
 
     private static final class RootNode<T> extends ListNode<T> {
+        private ListNode<T> last;
+
         private RootNode() {
             super(null);
+            root = this;
         }
+
+        ////////////////
+        // Navigation
+
+        @Override
+        public ListNode<T> first() {
+            return next();
+        }
+
+        @Override
+        public ListNode<T> last() {
+            return last;
+        }
+
+        ////////////////
+        // Modification
 
         @Override
         public T get() {
@@ -126,6 +163,12 @@ public class ListNode<T> {
         @Override
         public ListNode<T> remove() {
             throw new UnsupportedOperationException("cannot remove the root node");
+        }
+
+        @Override
+        public void clear() {
+            next = null;
+            last = null;
         }
     }
 }
