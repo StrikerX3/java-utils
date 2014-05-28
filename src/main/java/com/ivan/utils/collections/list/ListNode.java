@@ -45,7 +45,7 @@ public class ListNode<T> {
     protected ListNode<T> next;
     private T value;
 
-    private ListNode(final T e) {
+    ListNode(final T e) {
         this.value = e;
     }
 
@@ -127,9 +127,9 @@ public class ListNode<T> {
     }
 
     private static final class RootNode<T> extends ListNode<T> {
-        private ListNode<T> last;
+        ListNode<T> last;
 
-        private RootNode() {
+        RootNode() {
             super(null);
             root = this;
         }
